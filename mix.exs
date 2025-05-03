@@ -3,7 +3,7 @@ defmodule SeedMan.MixProject do
 
   @project_name "Seed Man"
   @source_url "https://github.com/arcanemachine/seed_man"
-  @version "0.1.0"
+  @version "0.1.1"
 
   def project do
     [
@@ -43,7 +43,10 @@ defmodule SeedMan.MixProject do
   defp docs do
     [
       main: @project_name,
-      extras: ["README.md"],
+      extras: [
+        "README.md": [title: "Readme"],
+        "CHANGELOG.md": [title: "Changelog"]
+      ],
       formatters: ["html"],
       main: "readme"
     ]
