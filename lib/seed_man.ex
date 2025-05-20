@@ -164,7 +164,7 @@ defmodule SeedMan do
   end
 
   defp build_seed_files_directory_path(repo_module) do
-    repo_directory_name = repo_module |> Macro.underscore() |> String.split("/") |> List.first()
+    repo_directory_name = repo_module |> Macro.underscore() |> String.split("/") |> List.last()
 
     "priv/#{repo_directory_name}/seeds"
   end
