@@ -3,7 +3,7 @@ defmodule SeedMan.MixProject do
 
   @project_name "Seed Man"
   @source_url "https://github.com/arcanemachine/seed_man"
-  @version "0.1.1"
+  @version "0.1.2"
 
   def project do
     [
