@@ -19,7 +19,7 @@ Add this package to your list of dependencies in `mix.exs`, then run `mix deps.g
 ```elixir
 def deps do
   [
-    {:seed_man, "0.1.3", only: [:dev, :test]}
+    {:seed_man, "0.1.4", only: [:dev, :test]}
   ]
 end
 ```

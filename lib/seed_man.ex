@@ -125,9 +125,12 @@ defmodule SeedMan do
     seed_data = eval_seed_data_from_seed_file(repo_module, schema_module)
 
     Logger.info(~s(Loading seed data for the table "#{table_name}" from "#{seed_file_path}"...))
-    repo_module.insert_all(schema_module, seed_data)
 
-    apply(repo_module, insert_all_function_atom, [schema_module, insert_all_opts])
+    seed_data
+    |> Enum.chunk_every(1000)
+    |> Enum.map(
+      &apply(repo_module, insert_all_function_atom, [schema_module, &1, insert_all_opts])
+    )
 
     :ok
   end
